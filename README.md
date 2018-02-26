@@ -15,7 +15,7 @@
     Each time a customer comes into the store, a Rental is created that will keep track of what videos they rented and how many nights they will keep the videos. A customer rents the “group” of videos and returns them all at the same time. They will NOT, for example, rent three videos and then return one after 2 days, the second after 5 days, and the third after seven days. They will instead return all of the videos they rented at the specified time. (That means, for instance, that a customer will never be late in returning their videos.)
 
     The store keeps track of the existing rentals along with the current inventory of the store. As such, when it has zero rentals,there will be 20 videos in its inventory. When it has zero videos in its inventory, it will have multiple rentals that between them account for all 20 videos.
-ห
+
     Finally, a customer pays up front for their rental. If, for example, a customer rents three Horror videos for three nights at a price of $3 per night, they will pay the store $27 dollars before they leave the store with their three videos.
 
 * Clarifications
