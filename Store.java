@@ -1,31 +1,30 @@
 class Store{
-    public static void main(String[] args){
-        for(int day = 1; day <= 35; day++){
-            System.out.printf("[Store main] Day %d\n" , (day));
+    Video[] vdo;
 
-        }
-    }
     public Store(){
-        Video[] vdo = new Video[20];
-        vdo[0] = new Video("BNK48", "New Release", 5);
-        vdo[1] = new Video("BNK48", "New Release", 5);
-        vdo[2] = new Video("BNK48", "New Release", 5);
-        vdo[3] = new Video("BNK48", "New Release", 5);
-        vdo[4] = new Video("BNK48", "Drama", 2);
-        vdo[5] = new Video("BNK48", "Drama", 2);
-        vdo[6] = new Video("BNK48", "Drama", 2);
-        vdo[7] = new Video("BNK48", "Drama", 2);
-        vdo[8] = new Video("BNK48", "Comedy", 4);
-        vdo[9] = new Video("BNK48", "Comedy", 4);
-        vdo[10] = new Video("BNK48", "Comedy", 4);
-        vdo[11] = new Video("BNK48", "Comedy", 4);
-        vdo[12] = new Video("BNK48", "Romance", 3);
-        vdo[13] = new Video("BNK48", "Romance", 3);
-        vdo[14] = new Video("BNK48", "Romance", 3);
-        vdo[15] = new Video("BNK48", "Romance", 3);
-        vdo[16] = new Video("BNK48", "Horror", 1);
-        vdo[17] = new Video("BNK48", "Horror", 1);
-        vdo[18] = new Video("BNK48", "Horror", 1);
-        vdo[19] = new Video("BNK48", "Horror", 1);
+        vdo = new Video[20];
+        vdo[0] = new Video("Black Panther", "New Release", 5);
+        vdo[1] = new Video("The Shape of Water", "New Release", 5);
+        vdo[2] = new Video("Monster Hunt 2", "New Release", 5);
+        vdo[3] = new Video("Maze Runner 3", "New Release", 5);
+        vdo[4] = new Video("Citizen Kane", "Drama", 4);
+        vdo[5] = new Video("All about Eve", "Drama", 4);
+        vdo[6] = new Video("Metropolis", "Drama", 4);
+        vdo[7] = new Video("Moonlight", "Drama", 4);
+        vdo[8] = new Video("Step Brothers", "Comedy", 3);
+        vdo[9] = new Video("White Chicks", "Comedy", 3);
+        vdo[10] = new Video("The Hot Chick", "Comedy", 3);
+        vdo[11] = new Video("The Hangover", "Comedy", 3);
+        vdo[12] = new Video("The Greatest Showman", "Romance", 2);
+        vdo[13] = new Video("When We First Met", "Romance", 2);
+        vdo[14] = new Video("Phantom Thread", "Romance", 2);
+        vdo[15] = new Video("Call Me by Your Name", "Romance", 2);
+        vdo[16] = new Video("Get Out", "Horror", 1);
+        vdo[17] = new Video("Psycho", "Horror", 1);
+        vdo[18] = new Video("Repulsion", "Horror", 1);
+        vdo[19] = new Video("It Follows", "Horror", 1);
+    }
+    public Video[] getvdo(){
+        return vdo;
     }
 }
