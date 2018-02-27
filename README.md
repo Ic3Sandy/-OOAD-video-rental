@@ -48,4 +48,6 @@
 
 * Submission
 
-    Part I: A pdf file of use cases for the program due February 25, 2018 by midnight. Part II: An archive (i.e. a zip archive or compressed tar file) containing the source code for your program and a PDF document that describes your program and its design and that provides instructions on how to compile it and run it. The PDF document will also contain a UML class diagram that shows the classes that make up your program and the relationships that exist between them. This part is done in group and due March 4, 2018 by midnight.
+    Part I: A pdf file of use cases for the program due February 25, 2018 by midnight.
+
+    Part II: An archive (i.e. a zip archive or compressed tar file) containing the source code for your program and a PDF document that describes your program and its design and that provides instructions on how to compile it and run it. The PDF document will also contain a UML class diagram that shows the classes that make up your program and the relationships that exist between them. This part is done in group and due March 4, 2018 by midnight.
