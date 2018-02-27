@@ -2,6 +2,8 @@
 
 ## Video Rental Store
 
+### nakorn vatjanasatit
+
 * Problem Domain: Video Rental Store
 
     For this homework, you will analyze and design an object-oriented program to model the following problem domain. (Note: see clarifications at the end of this post, for additional details on the problem domain and the program you need to implement.)
