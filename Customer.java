@@ -41,13 +41,6 @@ class Customer{
         return able_rent;
     }
 
-    // public boolean getVdoRent(Person person, Store liew){
-    //     if(person.getType().equals("Hoarder") && liew.countListVdo() > 2) 
-    //         return true;
-    //     else if(person.getNumVdoRent() < 3) 
-    //         return true;
-    //     else 
-    //         return false;   
-    // }
+    
 
 }
