@@ -1,5 +1,6 @@
 class Store{
     Video[] vdo;
+    int[] x = new array[20]
 
     public Store(){
         vdo = new Video[20];
@@ -23,8 +24,20 @@ class Store{
         vdo[17] = new Video("Psycho", "Horror", 1);
         vdo[18] = new Video("Repulsion", "Horror", 1);
         vdo[19] = new Video("It Follows", "Horror", 1);
+        
     }
-    public Video[] getvdo(){
+
+    public Video[] get_all_vdo(){
         return vdo;
     }
+
+    // get vdo ที่ยังไม่ถูกยืม
+    public Video[] get_list_vdo(){
+        return vdo
+    }
+
+    public void rent (Person person, Video vdo){
+
+    }
+
 }
