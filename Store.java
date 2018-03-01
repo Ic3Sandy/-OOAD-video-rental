@@ -1,9 +1,11 @@
 import java.util.Random;
+
 class Store{
     private Video[] vdo;
     private int[] n;
     private int count_list_vdo;
-
+    Random rand = new Random();
+    
     public Store(){
         vdo = new Video[20];
         vdo[0] = new Video("Black Panther", "New Release", 5);
@@ -66,8 +68,8 @@ class Store{
 
     public void rent (Person person){
         Random rand = new Random();
-        int day;
-        int rent_vdo;
+        int day = 0;
+        int rent_vdo = 0;
 
         if ((person.getType()).equals("Breezy")){
             rent_vdo = rand.nextInt(2) + 1;
@@ -85,8 +87,8 @@ class Store{
         }    
 
         for (int i = 0;i < rent_vdo;i++){
-            amount_vdo = liew.countListVdo();
-            ran_vdo = liew.getVdo(rand.nextInt(amount_vdo) + 1);
+            int amount_vdo = countListVdo();
+            int ran_vdo = getVdo(rand.nextInt(amount_vdo) + 1);
 
             person.setNumVdoRent(1);
             n[ran_vdo] = 0;
@@ -95,7 +97,4 @@ class Store{
         //คิดเงิน
     }
 
-    public void return (){
-        
-    }
 }
