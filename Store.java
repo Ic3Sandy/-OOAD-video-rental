@@ -1,8 +1,8 @@
 import java.util.Random;
 class Store{
-    Video[] vdo;
-    int x = 20;
-    int[] n = new int[x];
+    private Video[] vdo;
+    private int[] n;
+    private int count_list_vdo;
 
     public Store(){
         vdo = new Video[20];
@@ -27,30 +27,29 @@ class Store{
         vdo[18] = new Video("Repulsion", "Horror", 1);
         vdo[19] = new Video("It Follows", "Horror", 1);
         
-        for(int i = 0;i < vdo.length;i++){
+        n = new Int[20];
+        for(int i = 0;i < vdo.length();i++){
             n[i] = i;
         }
+
+        count_list_vdo = 20;
     }
 
     public Video[] getAllVdo(){
         return vdo;
     }
-    //get จำนวน vdo ที่สามารถยืมได้
     public int countListVdo(){
-        return x;
+        return count_list_vdo;
     }
 
-    // get vdo ที่สามารถยืมได้
-    public Video[] getVdo(int x){
+    public int getVdo(int x){
         int a[] = int[vdo.length()];
         int y = 0;
         boolean k = true;
-        x = x*10;
 
         for (int i = 0;i < vdo.length();i++){
-            if (n[i] != null) {
-                y = (y + 1);
-                a[i] = y;
+            if (n[i] != null){
+                a[i] = ++y;
                 k = true;
             }
             else {
