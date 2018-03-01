@@ -15,5 +15,6 @@ class Main{
                     break;            
             }
         }
+        int i = 0;
 
     }
