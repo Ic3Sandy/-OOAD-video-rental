@@ -1,6 +1,6 @@
 class Store{
     Video[] vdo;
-    int[] x = new array[20]
+    int[] list_vdo = new int[20];
 
     public Store(){
         vdo = new Video[20];
@@ -33,10 +33,10 @@ class Store{
 
     // get vdo ที่ยังไม่ถูกยืม
     public Video[] get_list_vdo(){
-        return vdo
+        return vdo;
     }
 
-    public void rent (Person person, Video vdo){
+    public void rent(Person person, Video vdo){
 
     }
 

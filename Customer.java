@@ -1,5 +1,6 @@
 class Customer{
     private Person[] person;
+    private Person[] able_rent;
 
     public Customer(){
         person = new Person[10];
@@ -14,7 +15,39 @@ class Customer{
         person[8] = new Person("B", "Regular");
         person[9] = new Person("Sprite", "Regular");
     }
+
     public Person[] getPerson(){
         return person;
-    }     
+    }
+    
+    public Person[] getAbleRent(Store liew){
+        Person[] temp = new Person[10];
+        int count_able_rent = 0;
+        
+        for(int i = 0; i < 10; i++){
+            if(getVdoRent(person[i], liew)){
+                temp[i] = person[i];
+                count_able_rent++;
+            }
+        }
+
+        able_rent = new Person[count_able_rent];
+        for(int i = 0, j = 0; i < 10; i++){
+            if(temp[i] != null){
+                able_rent[j++] = temp[i];
+            }
+        }
+
+        return able_rent;
+    }
+
+    public boolean getVdoRent(Person person, Store liew){
+        if(person.getType().equals("Hoarder") && liew.countListVdo() > 2) 
+            return true;
+        else if(person.getNumVdoRent() < 3) 
+            return true;
+        else 
+            return false;   
+    }
+
 }

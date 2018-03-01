@@ -17,7 +17,7 @@ class Main{
             /*
 
             while(true)
-                list_custom = customer.getคนที่สามารถเช่าได้
+                list_custom = customer.getAbleRent(liew);
                 list_vdo = liew.getหนังที่มีให้ยืม
                 ran_customer = rand.nextInt(list_custom.length) + 1;
                 ran_vdo = rand.nextInt(list_vdo.length) + 1;
