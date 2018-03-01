@@ -1,9 +1,11 @@
 import java.util.Random;
+
 class Store{
     private Video[] vdo;
     private int[] n;
     private int count_list_vdo;
-
+    Random rand = new Random();
+    
     public Store(){
         vdo = new Video[20];
         vdo[0] = new Video("Black Panther", "New Release", 5);
@@ -27,8 +29,8 @@ class Store{
         vdo[18] = new Video("Repulsion", "Horror", 1);
         vdo[19] = new Video("It Follows", "Horror", 1);
         
-        n = new Int[20];
-        for(int i = 0;i < vdo.length();i++){
+        n = new int[20];
+        for(int i = 0;i < vdo.length; i++){
             n[i] = i;
         }
 
@@ -43,12 +45,12 @@ class Store{
     }
 
     public int getVdo(int x){
-        int a[] = int[vdo.length()];
+        int a[] = new int[vdo.length];
         int y = 0;
         boolean k = true;
 
-        for (int i = 0;i < vdo.length();i++){
-            if (n[i] != null){
+        for (int i = 0; i < vdo.length; i++){
+            if(n[i] != 0){
                 a[i] = ++y;
                 k = true;
             }
@@ -58,24 +60,25 @@ class Store{
             }
         }
         
-        for (int i = 0;i < vdo.length();i++) {
-            if ((a[i] == x) && (k == true) return i;
+        for (int i = 0;i < vdo.length;i++) {
+            if ((a[i] == x) && (k == true)) return i;
         }
+		return y;
     }
 
     public void rent (Person person, int vdo){
         int day;
         int rent_vdo;
 
-        n[vdo] = null;
+        n[vdo] = 0;
     
-        if (person.getType() == Breezy)
+        if (person.getType() == "Breezy")
             rent_vdo = rand.nextInt(2) + 1;
             day = rand.nextInt(2) + 1;
-        if (person.getType() == Hoarder)
-            rent_vdo = 3
+        if (person.getType() == "Hoarder")
+            rent_vdo = 3;
             day = 7;
-        if (person.getType() == Regular)
+        if (person.getType() == "Regular")
             if (countListVdo() > 3)
                 rent_vdo = rand.nextInt(3) + 1;
             else rent_vdo = rand.nextInt(countListVdo()) + 1;
