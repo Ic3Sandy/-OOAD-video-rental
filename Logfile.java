@@ -17,4 +17,23 @@ class Logfile{
         return "Rent Day: "+this.rent_day+", Name: "+this.name_customer+", Video: "+this.name_vdo+", Day: "+this.day+", Amount: "+this.amount;
     }
 
+    public int getDay(){
+        return this.day; 
+    }
+
+    public int getRentDay(){
+        return this.rent_day;
+    }
+
+    public String getNameCustomer(){
+        return this.name_customer;
+    }
+
+    public String getNameVdo(){
+        return this.name_vdo;
+    }
+
+    public int getAmount(){
+        return this.amount;
+    }
 }
