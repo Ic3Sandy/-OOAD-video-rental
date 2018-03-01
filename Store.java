@@ -66,7 +66,7 @@ class Store{
         return y;
     }
 
-    public void rent (Person person){
+    public void rent(Person person){
         Random rand = new Random();
         int day = 0;
         int rent_vdo = 0;
