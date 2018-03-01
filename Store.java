@@ -27,9 +27,9 @@ class Store{
         vdo[18] = new Video("Repulsion", "Horror", 1);
         vdo[19] = new Video("It Follows", "Horror", 1);
         
-        n = new Int[20];
-        for(int i = 0;i < vdo.length();i++){
-            n[i] = i;
+        n = new int[20];
+        for(int i = 0;i < vdo.length;i++){
+            n[i] = 1;
         }
 
         count_list_vdo = 20;
@@ -43,12 +43,12 @@ class Store{
     }
 
     public int getVdo(int x){
-        int a[] = int[vdo.length()];
+        int a[] = new int[vdo.length];
         int y = 0;
         boolean k = true;
 
-        for (int i = 0;i < vdo.length();i++){
-            if (n[i] != null){
+        for (int i = 0;i < vdo.length;i++){
+            if (n[i] != 0){
                 a[i] = ++y;
                 k = true;
             }
@@ -58,27 +58,44 @@ class Store{
             }
         }
         
-        for (int i = 0;i < vdo.length();i++) {
-            if ((a[i] == x) && (k == true) return i;
+        for (int i = 0;i < vdo.length;i++) {
+            if ((a[i] == x) && (k == true)) return i;
         }
+        return y;
     }
 
-    public void rent (Person person, int vdo){
+    public void rent (Person person){
+        Random rand = new Random();
         int day;
         int rent_vdo;
 
-        n[vdo] = null;
-    
-        if (person.getType() == Breezy)
+        if ((person.getType()).equals("Breezy")){
             rent_vdo = rand.nextInt(2) + 1;
             day = rand.nextInt(2) + 1;
-        if (person.getType() == Hoarder)
-            rent_vdo = 3
+        }    
+        if ((person.getType()).equals("Hoarder")){
+            rent_vdo = 3;
             day = 7;
-        if (person.getType() == Regular)
+        }    
+        if ((person.getType()).equals("Regular")){
             if (countListVdo() > 3)
                 rent_vdo = rand.nextInt(3) + 1;
             else rent_vdo = rand.nextInt(countListVdo()) + 1;
             day = rand.nextInt(5) + 3;
+        }    
+
+        for (int i = 0;i < rent_vdo;i++){
+            amount_vdo = liew.countListVdo();
+            ran_vdo = liew.getVdo(rand.nextInt(amount_vdo) + 1);
+
+            person.setNumVdoRent(1);
+            n[ran_vdo] = 0;
+
+        }
+        //คิดเงิน
+    }
+
+    public void return (){
+        
     }
 }

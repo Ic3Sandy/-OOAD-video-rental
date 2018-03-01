@@ -5,16 +5,17 @@ class Main{
         Store liew = new Store();
         Customer customer = new Customer();
         
-            while(true)
-                list_custom = customer.getAbleRent(liew);
-                amount_vdo = liew.countListVdo();
-                ran_customer = rand.nextInt(list_custom.length) + 1;
-                ran_vdo = liew.getVdo(rand.nextInt(amount_vdo) + 1;)
+        for(int day = 1;day <= 35;day++){
+        
 
-                if (!liew.rent(list_custom[ran_customer], ran_vdo);)       
-                    break;            
-            
+            while(!((customer.getAbleRent(liew)).length == 0 && liew.countListVdo() == 0)){
+                list_customer = customer.getAbleRent(liew));
+                ran_customer = rand.nextInt(list_customer.length) + 1; 
+
+                liew.rent(list_custom[ran_customer]);
+            }
+
         }
-
+        //print log
     }
 }
