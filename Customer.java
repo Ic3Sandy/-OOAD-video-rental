@@ -1,6 +1,5 @@
 class Customer{
     private Person[] person;
-    private Person[] able_rent;
 
     public Customer(){
         person = new Person[10];
@@ -31,7 +30,7 @@ class Customer{
             }
         }
 
-        able_rent = new Person[count_able_rent];
+        Person[] able_rent = new Person[count_able_rent];
         for(int i = 0, j = 0; i < 10; i++){
             if(temp[i] != null){
                 able_rent[j++] = temp[i];

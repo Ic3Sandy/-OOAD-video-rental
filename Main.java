@@ -1,21 +1,34 @@
 import java.util.Random;
+import java.lang.*;
+
 class Main{
     public static void main(String[] args){
         Random rand = new Random();
         Store liew = new Store();
         Customer customer = new Customer();
         
-        for(int day = 1;day <= 35;day++){
-        
+        for(int rent_day = 1; rent_day <= 35; rent_day++){
+            System.out.printf("[Day %d] Begin\n", rent_day);
 
-            while(!((customer.getAbleRent(liew)).length == 0 && liew.countListVdo() == 0)){
-                list_customer = customer.getAbleRent(liew);
-                ran_customer = rand.nextInt(list_customer.length) + 1; 
-
-                liew.rent(list_custom[ran_customer]);
+            if(rent_day != 1){
+                liew.checkReturn(rent_day - 1);
             }
 
+            Person[] list_customer = customer.getAbleRent(liew);
+            while(list_customer.length > 0 && liew.countListVdo() > 0){
+                list_customer = customer.getAbleRent(liew);
+                System.out.println("[list_customer.length] :"+list_customer.length);
+                int ran_customer = rand.nextInt(list_customer.length);
+                System.out.println("[ran_customer] :"+ran_customer); 
+                liew.rent(list_customer[ran_customer], rent_day);
+            }
+            System.out.printf("[Day %d] Income: %d\n", rent_day, liew.getIncome());
+            System.out.printf("[Day %d] End\n", rent_day);
+            try {
+                Thread.sleep(1000);
+             } catch (Exception e) {
+                System.out.println(e);
+             }
         }
-        //print log
     }
 }
