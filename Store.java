@@ -1,6 +1,8 @@
+import java.util.Random;
 class Store{
     Video[] vdo;
-    int[] x = new array[20]
+    int x = 20;
+    int[] n = new int[x];
 
     public Store(){
         vdo = new Video[20];
@@ -25,19 +27,59 @@ class Store{
         vdo[18] = new Video("Repulsion", "Horror", 1);
         vdo[19] = new Video("It Follows", "Horror", 1);
         
+        for(int i = 0;i < vdo.length;i++){
+            n[i] = i;
+        }
     }
 
-    public Video[] get_all_vdo(){
+    public Video[] getAllVdo(){
         return vdo;
     }
-
-    // get vdo ที่ยังไม่ถูกยืม
-    public Video[] get_list_vdo(){
-        return vdo
+    //get จำนวน vdo ที่สามารถยืมได้
+    public int countListVdo(){
+        return x;
     }
 
-    public void rent (Person person, Video vdo){
+    // get vdo ที่สามารถยืมได้
+    public Video[] getVdo(int x){
+        int a[] = int[vdo.length()];
+        int y = 0;
+        boolean k = true;
+        x = x*10;
 
+        for (int i = 0;i < vdo.length();i++){
+            if (n[i] != null) {
+                y = (y + 1);
+                a[i] = y;
+                k = true;
+            }
+            else {
+                a[i] = y;
+                k = false;
+            }
+        }
+        
+        for (int i = 0;i < vdo.length();i++) {
+            if ((a[i] == x) && (k == true) return i;
+        }
     }
 
+    public void rent (Person person, int vdo){
+        int day;
+        int rent_vdo;
+
+        n[vdo] = null;
+    
+        if (person.getType() == Breezy)
+            rent_vdo = rand.nextInt(2) + 1;
+            day = rand.nextInt(2) + 1;
+        if (person.getType() == Hoarder)
+            rent_vdo = 3
+            day = 7;
+        if (person.getType() == Regular)
+            if (countListVdo() > 3)
+                rent_vdo = rand.nextInt(3) + 1;
+            else rent_vdo = rand.nextInt(countListVdo()) + 1;
+            day = rand.nextInt(5) + 3;
+    }
 }
