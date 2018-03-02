@@ -17,7 +17,7 @@ class Person{
         return "Name: "+name+", Type: "+type;
     }
     public void setNumVdoRent(int num_vdo_rent){
-        this.num_vdo_rent += num_vdo_rent;
+        this.num_vdo_rent = num_vdo_rent;
     }
     public int getNumVdoRent(){
         return this.num_vdo_rent;

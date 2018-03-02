@@ -7,11 +7,11 @@ class Main{
         Store liew = new Store();
         Customer customer = new Customer();
         
-        for(int rent_day = 1; rent_day <= 35; rent_day++){
+        for(int rent_day = 1; rent_day <= 35; rent_day++){   
             System.out.printf("[Day %d] Begin\n", rent_day);
 
             if(rent_day != 1){
-                liew.checkReturn(rent_day - 1);
+                liew.checkReturn();
             }
 
             Person[] list_customer = customer.getAbleRent(liew);
