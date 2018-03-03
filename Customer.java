@@ -19,12 +19,12 @@ class Customer{
         return person;
     }
     
-    public Person[] getAbleRent(Store liew){
+    public Person[] getAbleRent(Store liew, int rent_day){
         Person[] temp = new Person[10];
         int count_able_rent = 0;
         
         for(int i = 0; i < 10; i++){
-            if(getVdoRent(person[i], liew)){
+            if(getVdoRent(person[i], liew, rent_day)){
                 temp[i] = person[i];
                 count_able_rent++;
             }
@@ -36,28 +36,17 @@ class Customer{
                 able_rent[j++] = temp[i];
             }
         }
-
         return able_rent;
     }
 
-    public boolean getVdoRent(Person person, Store liew){
-        if(person.getType().equals("Hoarder") && liew.countListVdo() > 2) 
-            return true;
-        else if(person.getNumVdoRent() < 3) 
-            return true;
-        else 
-            return false;   
+    public boolean getVdoRent(Person person, Store liew, int rent_day){
+        if (person.getRentDay() != rent_day){
+            if (person.getType().equals("Hoarder") && liew.countListVdo() > 2 && person.getNumVdoRent() < 3) return true;
+            else if (person.getNumVdoRent() < 3 && !(person.getType().equals("Hoarder"))) return true;
+            else return false;
+        }else return false;
     }
 
-    public Person[] getAbleRentDay(Person[] list_customer, int ran_customer){
-        list_customer[ran_customer] = null;
-        Person[] temp = new Person[list_customer.length - 1];
-            for(int i = 0, j = 0;i < list_customer.length;i++){
-                if(list_customer[i] != null){
-                    temp[j++] = list_customer[i];
-                }
-            }
-        return temp;    
 
-    }
+
 }
