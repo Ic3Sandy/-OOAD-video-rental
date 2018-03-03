@@ -48,4 +48,16 @@ class Customer{
         else 
             return false;   
     }
+
+    public Person[] getAbleRentDay(Person[] list_customer, int ran_customer){
+        list_customer[ran_customer] = null;
+        Person[] temp = new Person[list_customer.length - 1];
+            for(int i = 0, j = 0;i < list_customer.length;i++){
+                if(list_customer[i] != null){
+                    temp[j++] = list_customer[i];
+                }
+            }
+        return temp;    
+
+    }
 }

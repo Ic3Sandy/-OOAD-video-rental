@@ -14,7 +14,7 @@ class Person{
         return type;
     }
     public String getInfo(){
-        return "Name: "+name+", Type: "+type;
+        return "Name: "+name+", Type: "+type+", num_vdo_rent: "+ num_vdo_rent;
     }
     public void setNumVdoRent(int num_vdo_rent){
         this.num_vdo_rent = num_vdo_rent;

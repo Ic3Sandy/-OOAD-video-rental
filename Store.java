@@ -52,27 +52,52 @@ class Store{
         int day = 0;
         int rent_vdo = 0;
 
-        if ((person.getType()).equals("Breezy")){
-            rent_vdo = rand.nextInt(2) + 1;
-            day = rand.nextInt(2) + 1;
+        if ((person.getType()).equals("Breezy") || (person.getType()).equals("Regular")){
+            if(countListVdo() < person.getNumVdoRent() + 1) rent_vdo = rand.nextInt(countListVdo()) + 1;
+            else rent_vdo = rand.nextInt(person.getNumVdoRent() + 1) + 1;
+            // if (countListVdo() > 2) rent_vdo = rand.nextInt(2) + 1;
+            // else rent_vdo = rand.nextInt(countListVdo()) + 1;
+            if ((person.getType()).equals("Breezy")) day = rand.nextInt(2) + 1;
+            else day = rand.nextInt(3) + 3;
         }    
         else if ((person.getType()).equals("Hoarder")){
             rent_vdo = 3;
             day = 7;
         }    
-        else if ((person.getType()).equals("Regular")){
-            if (countListVdo() > 3) rent_vdo = rand.nextInt(3) + 1;
-            else rent_vdo = rand.nextInt(countListVdo()) + 1;
-            day = rand.nextInt(3) + 3;
-        }    
+          
+        // if ((person.getType()).equals("Breezy") || ){
+        //     if(countListVdo() < person.getNumVdoRent()) rent_vdo = rand.nextInt(countListVdo()) + 1;
+        //     else rent_vdo = rand.nextInt(person.getNumVdoRent()) + 1;
+        //     // if (countListVdo() > 2) rent_vdo = rand.nextInt(2) + 1;
+        //     // else rent_vdo = rand.nextInt(countListVdo()) + 1;
+        //     day = rand.nextInt(2) + 1;
+        // }    
+        // else if ((person.getType()).equals("Hoarder")){
+        //     rent_vdo = 3;
+        //     day = 7;
+        // }    
+        // else if ((person.getType()).equals("Regular")){
+        //     if (countListVdo() > 3) rent_vdo = rand.nextInt(3) + 1;
+        //     else rent_vdo = rand.nextInt(countListVdo()) + 1;
+        //     day = rand.nextInt(3) + 3;
+        // }    
+
 
         for (int i = 0; i < rent_vdo; i++){
+
+            // System.out.println("rent_vdo"   + rent_vdo);
+
             int ran_vdo = getVdo();
-            
+        
             person.setNumVdoRent(person.getNumVdoRent() + 1);
+            vdo[ran_vdo].setRestDay(day);
             vdo[ran_vdo].setStatus(false);
             income += vdo[ran_vdo].getPrice() * day;
             count_list_vdo -= 1;
+            System.out.println("***************");
+
+            System.out.println(person.getNumVdoRent()+"  num_vdo_rent");
+
 
             Logfile logging = new Logfile(rent_day, person, vdo[ran_vdo], day);
             logging.getInfo();
@@ -83,19 +108,22 @@ class Store{
     
     public void checkReturn(){
         for(int i = 0; i < vdo.length; i++){
+
+            // System.out.println("      "+ count_list_vdo);
+            
             int rest_day = vdo[i].getRestDay();
 
             if (rest_day - 1 == 0){
                 vdo[i].setRestDay(-1);
                 vdo[i].setStatus(true);
-
+                count_list_vdo++;
                 for(int j = log.size() - 1;j >= 0;j--){
                     Logfile log_check = log.get(j);
                     Video log_vdo = log_check.getVdo();
                     if ((log_vdo.getName()).equals(vdo[i].getName())){
                         Person log_person = log_check.getCustomer();
                         int num_vdo_rent = log_person.getNumVdoRent();
-                        log_person.setNumVdoRent(num_vdo_rent + 1);
+                        log_person.setNumVdoRent(num_vdo_rent - 1);
                         break;
                     }
                 }
