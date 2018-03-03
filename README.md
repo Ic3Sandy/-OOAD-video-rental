@@ -2,7 +2,9 @@
 
 ## Video Rental Store
 
-### nakorn vatjanasatit
+### Document of program at [Document.pdf](https://github.com/Ic3Sandy/OOAD-video-rental/blob/dev/Document.pdf)
+
+### Nakorn Vatjanasatit, Chitrathep Chitranuwatkul
 
 * Problem Domain: Video Rental Store
 
