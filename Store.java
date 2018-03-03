@@ -35,6 +35,17 @@ class Store{
     public Video[] getAllVdo(){ return vdo; }
     public int countListVdo(){ return count_list_vdo;}
     public int getIncome(){ return income; }
+    public void printLogFile(){
+        for(int i = 0;i < log.size();i++) log.get(i).getInfo();
+    }
+
+
+    public void printListVdo(){
+        System.out.println("List Videos: ");
+        for(int i = 0, j = 1;i < vdo.length;i++){
+            if (vdo[i].getStatus()) System.out.println(j++ + ". " + vdo[i+1].getName());
+        }
+    }
 
     public int getVdo(){
         int[] list_vdo = new int[count_list_vdo];
@@ -44,7 +55,6 @@ class Store{
             }
         }
         int x = rand.nextInt(list_vdo.length);
-        System.out.println("[rand.nextInt(list_vdo.length)] :"+x);
         return list_vdo[x];
     }
 
@@ -65,7 +75,6 @@ class Store{
         }    
             
         person.setRentDay(rent_day);
-        System.out.println(person.getName() + " " + person.getRentDay());
         for (int i = 0; i < rent_vdo; i++){
 
             int ran_vdo = getVdo();
@@ -79,7 +88,6 @@ class Store{
             Logfile logging = new Logfile(rent_day, person, vdo[ran_vdo], day);
             logging.getInfo();
             log.add(logging);
-
         }
     }
     

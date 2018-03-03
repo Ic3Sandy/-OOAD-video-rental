@@ -28,6 +28,7 @@ class Logfile{
     }
 
     public void getInfo(){
-        System.out.println("[Logging] Rent Day: "+rent_day+", Name: "+person.getName()+", Video: "+vdo.getName()+", Day Left: "+day);
+        System.out.println("[Logfile] Rent Day: "+rent_day+", Name: "+person.getName()+", Video: "+vdo.getName()+", Day Left: "+day);
     }
+
 }
