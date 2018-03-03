@@ -35,15 +35,16 @@ class Store{
     public Video[] getAllVdo(){ return vdo; }
     public int countListVdo(){ return count_list_vdo;}
     public int getIncome(){ return income; }
-    public void printLogFile(){
-        for(int i = 0;i < log.size();i++) log.get(i).getInfo();
-    }
 
+    public void printLogFile(){
+        for(int i = 0; i < log.size(); i++) 
+            log.get(i).getInfo();
+    }
 
     public void printListVdo(){
         System.out.println("List Videos: ");
         for(int i = 0, j = 1;i < vdo.length;i++){
-            if (vdo[i].getStatus()) System.out.println(j++ + ". " + vdo[i+1].getName());
+            if (vdo[i].getStatus()) System.out.println(j++ + ". " + vdo[i].getName());
         }
     }
 

@@ -5,7 +5,6 @@ class Main{
     public static void main(String[] args){
         Random rand = new Random();
         Store liew = new Store();
-        Video[] vdo = liew.getAllVdo();
         Customer customer = new Customer();
         
         for(int rent_day = 1; rent_day <= 35; rent_day++){   
@@ -24,17 +23,18 @@ class Main{
             }
             System.out.printf("[Main] Day %d Income: %d $\n", rent_day, liew.getIncome());
             System.out.printf("[Main] Day %d End\n", rent_day);
-
-            //  try {
-            //    Thread.sleep(1000);
-            //  } catch (Exception e) {
-            //     System.out.println(e);
-            //  }
             System.out.println("####################################################################");
+
+             try {
+               Thread.sleep(1000);
+             } catch (Exception e) {
+                System.out.println(e);
+             }
         }
         System.out.println();
         liew.checkReturn();
         liew.printListVdo();
+        System.out.println("Total Income : "+liew.getIncome());
         System.out.println();
         liew.printLogFile();
     }
